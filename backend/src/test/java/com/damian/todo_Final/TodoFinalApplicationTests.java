@@ -2,20 +2,15 @@ package com.damian.todo_Final;
 
 
 
-import com.damian.todo_Final.dao.ITodosRepository;
-import com.damian.todo_Final.entities.Todos;
-import com.damian.todo_Final.services.ITodosService;
-import com.damian.todo_Final.services.ItodosImpl;
-import com.fasterxml.jackson.databind.ObjectMapper;
 
-import org.junit.Before;
+import com.damian.todo_Final.entities.Todos;
+
 import org.junit.Test;
 import org.junit.runner.RunWith;
-import org.mockito.InjectMocks;
-import org.mockito.Mock;
-import org.mockito.Mockito;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
+import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
 import org.springframework.boot.test.context.SpringBootTest;
 
 
