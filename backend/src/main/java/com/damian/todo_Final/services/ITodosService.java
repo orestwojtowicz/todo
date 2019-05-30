@@ -3,8 +3,10 @@ package com.damian.todo_Final.services;
 
 
 import com.damian.todo_Final.entities.Todos;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
+
 
 public interface ITodosService {
 
@@ -13,9 +15,6 @@ public interface ITodosService {
     Todos deleteById(int id);
 
     Todos findById(int id);
-
-
-
 
     Todos save(Todos todos);
 

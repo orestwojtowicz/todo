@@ -45,9 +45,11 @@ public class ItodosImpl implements ITodosService{
     @Override
     public Todos findById(int theId) {
 
+
+
         Optional<Todos> result = iTodosRepository.findById(theId);
 
-        Todos todos = null;
+        Todos todos;
 
         if(result.isPresent()) {
             todos = result.get();
