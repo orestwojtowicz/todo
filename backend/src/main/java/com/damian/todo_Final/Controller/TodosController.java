@@ -52,8 +52,6 @@ public class TodosController {
     @PostMapping("/todos")
     public Todos saveNewTodo(@Valid @RequestBody Todos todo) {
 
-
-
         return iTodosRepository.save(todo);
     }
 

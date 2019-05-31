@@ -1,3 +1,28 @@
-<p>
-  todo-list works!
-</p>
+
+
+
+<form>
+<table class="table">
+  <thead>
+  <tr>
+    <th>ID</th>
+    <th>Description</th>
+    <th>Status</th>
+    <th>Data</th>
+    <th>Delete</th>
+    <th>Update</th>
+  </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let todo of todos">
+      <td>{{todo.id}}</td>
+      <td>{{todo.taskDescritpion}}</td>
+      <td>{{todo.taskStatus}}</td>
+      <td>{{todo.taskDate}}</td>
+      <td><button class="btn btn-danger" (click)="deleteSingleTodo(todo.id)">Delete</button></td>
+      <td><button class="btn btn-secondary" (click)="updateSingleTodo(todo.id)">Update</button></td>
+    </tr>
+  </tbody>
+  <button class="btn btn-secondary" (click)="addSingleTodo()">ADD TASK</button>
+</table>
+</form>

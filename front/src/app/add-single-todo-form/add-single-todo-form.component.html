@@ -1,0 +1,38 @@
+<div class="container">
+<form (ngSubmit)="saveTodo()">
+
+  <fieldset class="form-group">
+    <label>ID</label>
+    <input class="form-control" type="number" name="id" required="required" [(ngModel)]="todo.id">
+  </fieldset>
+
+  <fieldset class="form-group">
+    <label>Description</label>
+    <input class="form-control" type="text" name="description" required="required"  [(ngModel)]="todo.taskDescritpion">
+  </fieldset>
+
+  <fieldset class="form-group">
+    <label>status</label>
+    <input class="form-control" type="text" name="status" required="required"  [(ngModel)]="todo.taskStatus">
+  </fieldset>
+
+  <fieldset class="form-group">
+    <label>Date</label>
+
+    <input class="form-control"
+           type="text" required="required">
+
+   <!-- <input type="date" #taskDate="ngModel"
+           [ngModel]="todo.taskDate"
+           (ngModelChange)="todo.taskDate = $event"
+            class="form-control" name="taskDate" required="required"
+          >-->
+
+
+  </fieldset>
+
+
+
+  <button type="submit" class="btn btn-success">Save</button>
+  </form>
+</div>

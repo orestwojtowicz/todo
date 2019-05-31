@@ -6,20 +6,29 @@ import { TodoListComponent } from './todo-list/todo-list.component';
 import {Router, RouterModule} from '@angular/router';
 import { ErrorComponent } from './error/error.component';
 import {AppRouting} from './app.routing.';
+import {HTTP_INTERCEPTORS, HttpClient, HttpClientModule} from '@angular/common/http';
+import {HttpInterceptorService} from './services/http-interceptor/http-interceptor.service';
+import { AddSingleTodoFormComponent } from './add-single-todo-form/add-single-todo-form.component';
+import {FormsModule} from '@angular/forms';
 
 @NgModule({
   declarations: [
     AppComponent,
     TodoListComponent,
-    ErrorComponent
+    ErrorComponent,
+    AddSingleTodoFormComponent
   ],
   imports: [
     BrowserModule,
     AppRouting,
-    RouterModule
+    RouterModule,
+    HttpClientModule,
+    FormsModule
 
   ],
-  providers: [],
+  providers: [
+    { provide: HTTP_INTERCEPTORS, useClass: HttpInterceptorService, multi: true}
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
