@@ -9,7 +9,12 @@ import {AppRouting} from './app.routing.';
 import {HTTP_INTERCEPTORS, HttpClient, HttpClientModule} from '@angular/common/http';
 import {HttpInterceptorService} from './services/http-interceptor/http-interceptor.service';
 import { AddSingleTodoFormComponent } from './add-single-todo-form/add-single-todo-form.component';
-import {FormsModule} from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {MatFormFieldModule, MatIconModule} from '@angular/material';
+import {MatButtonModule} from '@angular/material';
+import {MatInputModule} from '@angular/material';
+import {MatSelectModule} from '@angular/material';
 
 @NgModule({
   declarations: [
@@ -23,7 +28,14 @@ import {FormsModule} from '@angular/forms';
     AppRouting,
     RouterModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    BrowserAnimationsModule,
+    MatButtonModule,
+    MatFormFieldModule,
+    MatInputModule,
+    ReactiveFormsModule,
+    MatSelectModule,
+    MatIconModule
 
   ],
   providers: [

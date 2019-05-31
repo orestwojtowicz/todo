@@ -1,5 +1,17 @@
+<!--
 <div class="container">
 <form (ngSubmit)="saveTodo()">
+
+
+&lt;!&ndash;
+
+  <mat-card>
+    <app-bullet-list [items]="items" color="green" ></app-bullet-list>
+    <app-testoutput (onSelectFood)="onSelectFood($event)"></app-testoutput>
+  </mat-card>
+
+&ndash;&gt;
+
 
   <fieldset class="form-group">
     <label>ID</label>
@@ -22,11 +34,11 @@
     <input class="form-control"
            type="text" required="required">
 
-   <!-- <input type="date" #taskDate="ngModel"
+   &lt;!&ndash; <input type="date" #taskDate="ngModel"
            [ngModel]="todo.taskDate"
            (ngModelChange)="todo.taskDate = $event"
             class="form-control" name="taskDate" required="required"
-          >-->
+          >&ndash;&gt;
 
 
   </fieldset>
@@ -36,3 +48,78 @@
   <button type="submit" class="btn btn-success">Save</button>
   </form>
 </div>
+-->
+<div class="container">
+<form (ngSubmit)="saveTodo()">
+<p>
+  <mat-form-field appearance="legacy">
+    <mat-label>ID</mat-label>
+    <input matInput placeholder="Placeholder">
+
+    <mat-hint>Id from database</mat-hint>
+  </mat-form-field>
+</p>
+  <!-- ###### -->
+<p>
+  <mat-form-field appearance="legacy">
+    <mat-label>Description</mat-label>
+    <input matInput placeholder="Placeholder">
+
+    <mat-hint>Task description</mat-hint>
+  </mat-form-field>
+</p>
+
+  <!-- -->
+<p>
+  <mat-form-field appearance="legacy">
+      <mat-select placeholder="Status">
+        <mat-option> Done</mat-option>
+        <mat-option> In progress</mat-option>
+      </mat-select>
+
+  </mat-form-field>
+</p>
+  <!-- -->
+<p>
+  <mat-form-field appearance="legacy">
+    <mat-label>Date</mat-label>
+    <input matInput placeholder="Placeholder">
+
+
+  </mat-form-field>
+</p>
+  <button mat-button color="primary" class="add_task_button" (click)="addSingleTodo()">Save</button>
+</form>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
