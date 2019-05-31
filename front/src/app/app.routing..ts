@@ -1,20 +1,21 @@
-import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import {RouterModule, Routes} from '@angular/router';
+import {ErrorComponent} from './error/error.component';
+import {TodoListComponent} from './todo-list/todo-list.component';
+import {NgModule} from '@angular/core';
 
-import { AppComponent } from './app.component';
-import { TodoListComponent } from './todo-list/todo-list.component';
-import {Router} from '@angular/router';
+
+const routes: Routes = [
+  { path: '', component: TodoListComponent},
+  { path: '**', component: ErrorComponent}
+  ];
+
+
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    TodoListComponent
-  ],
-  imports: [
-    BrowserModule,
-    Router
-  ],
-  providers: [],
-  bootstrap: [AppComponent]
+  imports: [RouterModule.forRoot(routes)],
+  exports: [RouterModule]
 })
-export class AppModule { }
+
+
+
+export class AppRouting { }
