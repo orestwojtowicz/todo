@@ -50,15 +50,15 @@
 </div>
 -->
 <div class="container">
-<form (ngSubmit)="saveTodo()">
-<p>
+<form (ngSubmit)="addSingleTodo()">
+<!--<p>
   <mat-form-field appearance="legacy">
     <mat-label>ID</mat-label>
     <input matInput placeholder="Placeholder">
 
     <mat-hint>Id from database</mat-hint>
   </mat-form-field>
-</p>
+</p>-->
   <!-- ###### -->
 <p>
   <mat-form-field appearance="legacy">
@@ -72,9 +72,9 @@
   <!-- -->
 <p>
   <mat-form-field appearance="legacy">
-      <mat-select placeholder="Status">
-        <mat-option> Done</mat-option>
-        <mat-option> In progress</mat-option>
+      <mat-select [(ngModel)]="selectedValue" name="weights"    placeholder="Weight">
+        <mat-option *ngFor="let taskWeight of weights" [value]="taskWeight.value"> {{taskWeight.viewValue}}</mat-option>
+
       </mat-select>
 
   </mat-form-field>
@@ -88,7 +88,7 @@
 
   </mat-form-field>
 </p>
-  <button mat-button color="primary" class="add_task_button" (click)="addSingleTodo()">Save</button>
+  <button mat-button color="primary" class="add_task_button">Save</button>
 </form>
 </div>
 

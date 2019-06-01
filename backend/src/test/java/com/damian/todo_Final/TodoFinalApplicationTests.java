@@ -66,9 +66,7 @@ public class TodoFinalApplicationTests {
 		Todos todo = new Todos();
 		todo.setId(5);
 		todo.setTaskDate("15.01.1990");
-		todo.setTaskStatus(true);
 		todo.setTaskDescritpion("Description for testing");
-
 		ResponseEntity<Todos> postResponse = restTemplate.postForEntity(getRootUrl() + "/todos", todo, Todos.class);
 		assertNotNull(postResponse);
 		assertNotNull(postResponse.getBody());
@@ -80,7 +78,6 @@ public class TodoFinalApplicationTests {
 		int id = 1;
 		Todos todo = restTemplate.getForObject(getRootUrl() + "/todos/" + id, Todos.class);
 		todo.setTaskDate("15.01.1990");
-		todo.setTaskStatus(true);
 		todo.setTaskDescritpion("Updating");
 		restTemplate.put(getRootUrl() + "/todos/" + id, todo);
 		Todos updatedTodo = restTemplate.getForObject(getRootUrl() + "/todos/" + id, Todos.class);

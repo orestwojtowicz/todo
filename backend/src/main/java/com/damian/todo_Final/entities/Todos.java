@@ -17,22 +17,30 @@ public class Todos {
     @Column(name = "task_description")
     private String taskDescritpion;
 
-    @Column(name = "task_Status")
-    private boolean taskStatus;
-
+    @Column(name = "task_weight")
+    private String taskWeight;
 
     @Column(name = "task_date")
     private String taskDate;
 
 
-    public Todos(String taskDescritpion, boolean taskStatus, String taskDate) {
+    public Todos(String taskDescritpion,  String taskDate, String taskWeight) {
         this.taskDescritpion = taskDescritpion;
-        this.taskStatus = taskStatus;
+
         this.taskDate = taskDate;
+        this.taskWeight = taskWeight;
     }
 
     public Todos() {
 
+    }
+
+    public String getTaskWeight() {
+        return taskWeight;
+    }
+
+    public void setTaskWeight(String taskWeight) {
+        this.taskWeight = taskWeight;
     }
 
     public int getId() {
@@ -51,18 +59,6 @@ public class Todos {
         this.taskDescritpion = taskDescritpion;
     }
 
-    public boolean getTaskStatus() {
-        return taskStatus;
-    }
-
-    public void setTaskStatus(boolean taskStatus) {
-        this.taskStatus = taskStatus;
-    }
-
-    public boolean isTaskStatus() {
-        return taskStatus;
-    }
-
     public String getTaskDate() {
         return taskDate;
     }
@@ -76,7 +72,7 @@ public class Todos {
         return "Todos{" +
                 "id=" + id +
                 ", taskDescritpion='" + taskDescritpion + '\'' +
-                ", taskStatus='" + taskStatus + '\'' +
+                ", taskStatus='" + '\'' +
                 ", taskDate='" + taskDate + '\'' +
                 '}';
     }
@@ -87,13 +83,12 @@ public class Todos {
         if (o == null || getClass() != o.getClass()) return false;
         Todos todos = (Todos) o;
         return getId() == todos.getId() &&
-                isTaskStatus() == todos.isTaskStatus() &&
                 Objects.equals(getTaskDescritpion(), todos.getTaskDescritpion()) &&
                 Objects.equals(getTaskDate(), todos.getTaskDate());
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(getId(), getTaskDescritpion(), isTaskStatus(), getTaskDate());
+        return Objects.hash(getId(), getTaskDescritpion(), getTaskDate());
     }
 }

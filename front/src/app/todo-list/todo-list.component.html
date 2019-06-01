@@ -5,20 +5,20 @@
 <table class="table">
   <thead>
   <tr>
-    <th>Important</th>
+
     <th>Description</th>
-    <th>Status</th>
-    <th>Data</th>
+    <th>Task value</th>
     <th>Delete</th>
     <th>Update</th>
+    <th></th>
   </tr>
   </thead>
   <tbody>
     <tr *ngFor="let todo of todos">
-      <td>Important</td>
+
       <td>{{todo.taskDescritpion}}</td>
-      <td>{{todo.taskStatus}}</td>
-      <td>{{todo.taskDate}}</td>
+      <td>{{todo.taskWeight}}</td>
+      <td>{{todo.taskDate | date: 'yyyy-MM-dd HH:mm'}}</td>
       <td><button mat-button color="warn" (click)="deleteSingleTodo(todo.id)">Delete</button></td>
       <td><button mat-button color="accent" (click)="updateSingleTodo(todo.id)">Update</button></td>
     </tr>
@@ -30,3 +30,9 @@
 
 
 <!-- primary accent warn  -->
+<!--
+<td *ngFor="let item of items">
+  <p-calendar showTime="true" [(ngModel)]="(item.testDate | date:'fullDate')"
+              (ngModelChange)="item.testDate = $event">
+  </p-calendar>
+</td>-->

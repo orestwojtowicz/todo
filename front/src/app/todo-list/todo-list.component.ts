@@ -22,6 +22,7 @@ export class TodoListComponent implements OnInit {
     this.getDataService.getAllTodosFromDatabase().subscribe(
       response => {
         this.todos = response;
+        console.log(response);
       }
     );
   }
@@ -47,14 +48,19 @@ addSingleTodo() {
 
 
 }
-
-
+/*
+id: 23
+taskDate: "2019-06-01T09:56:23.952Z"
+taskDescritpion: ""
+taskStatus: false
+taskWeight: null*/
 
 export class Todo {
   constructor(
     public id: number,
+    public taskWeight: string,
     public taskDescritpion: string,
-    public taskStatus: boolean,
+    public taskStatus: string,
     public taskDate: Date
   ) {
 
