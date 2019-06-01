@@ -63,6 +63,7 @@ public class TodosController {
 
         todo.setId(todo.getId());
         todo.setTaskDescritpion(todo.getTaskDescritpion());
+        todo.setTaskWeight(todo.getTaskDate());
         todo.setTaskDate(todo.getTaskDate());
         final Todos updatedTodo = iTodosRepository.save(todo);
         return updatedTodo;
@@ -70,7 +71,6 @@ public class TodosController {
 
 
 }
-
 
 
 

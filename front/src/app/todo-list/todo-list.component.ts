@@ -45,9 +45,9 @@ addSingleTodo() {
       }
     );
   }
-
-
 }
+
+
 /*
 id: 23
 taskDate: "2019-06-01T09:56:23.952Z"
@@ -55,12 +55,12 @@ taskDescritpion: ""
 taskStatus: false
 taskWeight: null*/
 
+
 export class Todo {
   constructor(
     public id: number,
-    public taskWeight: string,
     public taskDescritpion: string,
-    public taskStatus: string,
+    public taskWeight: string,
     public taskDate: Date
   ) {
 

@@ -1,97 +1,30 @@
-<!--
+
 <div class="container">
-<form (ngSubmit)="saveTodo()">
+<form (ngSubmit)="addSingleTodo()">
 
 
-&lt;!&ndash;
-
-  <mat-card>
-    <app-bullet-list [items]="items" color="green" ></app-bullet-list>
-    <app-testoutput (onSelectFood)="onSelectFood($event)"></app-testoutput>
-  </mat-card>
-
-&ndash;&gt;
-
-
-  <fieldset class="form-group">
-    <label>ID</label>
-    <input class="form-control" type="number" name="id" required="required" [(ngModel)]="todo.id">
-  </fieldset>
-
-  <fieldset class="form-group">
-    <label>Description</label>
-    <input class="form-control" type="text" name="description" required="required"  [(ngModel)]="todo.taskDescritpion">
-  </fieldset>
-
-  <fieldset class="form-group">
-    <label>status</label>
-    <input class="form-control" type="text" name="status" required="required"  [(ngModel)]="todo.taskStatus">
-  </fieldset>
-
-  <fieldset class="form-group">
-    <label>Date</label>
-
-    <input class="form-control"
-           type="text" required="required">
-
-   &lt;!&ndash; <input type="date" #taskDate="ngModel"
-           [ngModel]="todo.taskDate"
-           (ngModelChange)="todo.taskDate = $event"
-            class="form-control" name="taskDate" required="required"
-          >&ndash;&gt;
+  <p>
+    <mat-form-field appearance="legacy">
+      <mat-label>Description</mat-label>
+      <input matInput placeholder="Description" [(ngModel)]="todo.taskDescritpion" name="description">
+      <mat-hint>Task description</mat-hint>
+    </mat-form-field>
+  </p>
 
 
-  </fieldset>
 
+  <p>
+    <mat-form-field appearance="legacy">
+      <mat-select [(ngModel)]="todo.taskWeight" name="weights"    placeholder="Weight">
+        <mat-option *ngFor="let taskWeight of weights" [value]="taskWeight.value"> {{taskWeight.viewValue}}</mat-option>
+      </mat-select>
+    </mat-form-field>
+  </p>
 
 
   <button type="submit" class="btn btn-success">Save</button>
   </form>
 </div>
--->
-<div class="container">
-<form (ngSubmit)="addSingleTodo()">
-<!--<p>
-  <mat-form-field appearance="legacy">
-    <mat-label>ID</mat-label>
-    <input matInput placeholder="Placeholder">
-
-    <mat-hint>Id from database</mat-hint>
-  </mat-form-field>
-</p>-->
-  <!-- ###### -->
-<p>
-  <mat-form-field appearance="legacy">
-    <mat-label>Description</mat-label>
-    <input matInput placeholder="Placeholder">
-
-    <mat-hint>Task description</mat-hint>
-  </mat-form-field>
-</p>
-
-  <!-- -->
-<p>
-  <mat-form-field appearance="legacy">
-      <mat-select [(ngModel)]="selectedValue" name="weights"    placeholder="Weight">
-        <mat-option *ngFor="let taskWeight of weights" [value]="taskWeight.value"> {{taskWeight.viewValue}}</mat-option>
-
-      </mat-select>
-
-  </mat-form-field>
-</p>
-  <!-- -->
-<p>
-  <mat-form-field appearance="legacy">
-    <mat-label>Date</mat-label>
-    <input matInput placeholder="Placeholder">
-
-
-  </mat-form-field>
-</p>
-  <button mat-button color="primary" class="add_task_button">Save</button>
-</form>
-</div>
-
 
 
 
