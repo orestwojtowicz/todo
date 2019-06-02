@@ -44,13 +44,8 @@ public class ItodosImpl implements ITodosService{
 
     @Override
     public Todos findById(int theId) {
-
-
-
         Optional<Todos> result = iTodosRepository.findById(theId);
-
         Todos todos;
-
         if(result.isPresent()) {
             todos = result.get();
         } else {
@@ -64,7 +59,6 @@ public class ItodosImpl implements ITodosService{
 
     @Override
     public Todos save(Todos todos) {
-
       return iTodosRepository.save(todos);
     }
 

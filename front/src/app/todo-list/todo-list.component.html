@@ -19,11 +19,11 @@
       <td>{{todo.taskDescritpion}}</td>
       <td>{{todo.taskWeight}}</td>
       <td>{{todo.taskDate | date: 'yyyy-MM-dd HH:mm'}}</td>
-      <td><button mat-button color="accent" (click)="updateSingleTodo(todo.id)">Update</button></td>
-      <td><button mat-button color="warn" (click)="deleteSingleTodo(todo.id)">Delete</button></td>
+      <td><button mat-raised-button color="accent" (click)="editSingleTodo(todo.id)">Update</button></td>
+      <td><button mat-raised-button color="warn" (click)="deleteSingleTodo(todo.id)">Delete</button></td>
     </tr>
   </tbody>
-  <button mat-button color="primary" class="add_task_button" (click)="addSingleTodo()">ADD TASK</button>
+  <button mat-raised-button color="primary" class="add_task_button" (click)="addSingleTodo()">ADD TASK</button>
 
 </table>
 </form>

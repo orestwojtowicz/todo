@@ -23,10 +23,6 @@ export interface Weight {
 export class AddSingleTodoFormComponent implements OnInit {
 
 
-
-
-
-
   todo: Todo;
   id: number;
 
@@ -43,6 +39,7 @@ export class AddSingleTodoFormComponent implements OnInit {
 
   ngOnInit() {
     this.id = this.route.snapshot.params.id;
+    console.log('id ' + this.id);
 
     this.todo = new Todo(this.id,  '', '',  new Date());
     this.addSingleTaskService.getSingleTodo(this.id);
@@ -50,16 +47,26 @@ export class AddSingleTodoFormComponent implements OnInit {
   }
 
 
-  addSingleTodo() {
-
+  addOrUpdateSingleTodo() {
+    if (this.id === -1) {
       this.addSingleTaskService.createNewTodoTask(this.todo).subscribe(
         data => {
-          console.log(data);
+          console.log('adding new task data ' + data);
           this.router.navigate(['todos']);
         }
       );
-
+    } else {
+      this.addSingleTaskService.updateSingleTodo(this.id, this.todo).subscribe(
+        data => {
+          console.log('updating task data ' + data);
+          this.router.navigate(['todos']);
+        }
+      );
+    }
   }
+
+
+
 
 
 }

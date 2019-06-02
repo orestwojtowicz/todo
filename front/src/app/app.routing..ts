@@ -8,7 +8,8 @@ import {AddSingleTodoFormComponent} from './add-single-todo-form/add-single-todo
 const routes: Routes = [
   { path: '', component: TodoListComponent},
   { path: 'todos', component: TodoListComponent},
-  { path: 'todo', component: AddSingleTodoFormComponent},
+  { path: 'todo/:id', component: AddSingleTodoFormComponent},
+
   { path: '**', component: ErrorComponent}
   ];
 

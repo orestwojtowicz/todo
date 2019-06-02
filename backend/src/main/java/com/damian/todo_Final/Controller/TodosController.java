@@ -4,6 +4,7 @@ package com.damian.todo_Final.Controller;
 
 import com.damian.todo_Final.entities.Todos;
 import com.damian.todo_Final.services.ITodosService;
+import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.rest.webmvc.ResourceNotFoundException;
 import org.springframework.web.bind.annotation.*;
@@ -53,8 +54,13 @@ public class TodosController {
     @PostMapping("/todos")
     public Todos saveNewTodo(@Valid @RequestBody Todos todo) {
 
+        Todos newTodo = new Todos();
+        newTodo.setTaskWeight(todo.getTaskWeight());
+        newTodo.setTaskDescritpion(todo.getTaskDescritpion());
+        newTodo.setTaskDate(todo.getTaskDate());
 
-        return iTodosRepository.save(todo);
+        return iTodosRepository.save(newTodo);
+
     }
 
     // UPDATE ITEM
@@ -63,10 +69,21 @@ public class TodosController {
 
         todo.setId(todo.getId());
         todo.setTaskDescritpion(todo.getTaskDescritpion());
-        todo.setTaskWeight(todo.getTaskDate());
+        todo.setTaskWeight(todo.getTaskWeight());
         todo.setTaskDate(todo.getTaskDate());
         final Todos updatedTodo = iTodosRepository.save(todo);
         return updatedTodo;
+
+
+         /*   Todos singleTodo = findSingleTodo(todo.getId());
+            if(singleTodo != null) {
+                BeanUtils.copyProperties(todo, singleTodo);
+                iTodosRepository.save(singleTodo);
+            }
+            return todo;*/
+
+
+
     }
 
 

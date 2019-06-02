@@ -18,6 +18,10 @@ export class TodoListComponent implements OnInit {
     this.getAllTodosToDisplay();
   }
 
+  editSingleTodo(id) {
+    console.log('user to update with io = ' + id);
+    this.router.navigate(['todo', id]);
+  }
   getAllTodosToDisplay() {
     this.getDataService.getAllTodosFromDatabase().subscribe(
       response => {
@@ -27,14 +31,12 @@ export class TodoListComponent implements OnInit {
     );
   }
 addSingleTodo() {
-    console.log('click click');
-    this.router.navigate(['todo']);
+    console.log('id add single ');
+    this.router.navigate(['todo', -1]);
 }
 
 
-  updateSingleTodo() {
-      this.router.navigate(['todo']);
-  }
+
 
 
   deleteSingleTodo(id) {
@@ -49,11 +51,7 @@ addSingleTodo() {
 
 
 /*
-id: 23
-taskDate: "2019-06-01T09:56:23.952Z"
-taskDescritpion: ""
-taskStatus: false
-taskWeight: null*/
+{id: 67, taskDescritpion: "PIMPEk", taskWeight: "Not-Important", taskDate: "2019-06-01T21:48:45.157Z"}*/
 
 
 export class Todo {
