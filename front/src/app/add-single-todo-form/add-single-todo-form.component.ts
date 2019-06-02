@@ -41,8 +41,9 @@ export class AddSingleTodoFormComponent implements OnInit {
     this.id = this.route.snapshot.params.id;
     console.log('id ' + this.id);
 
-    this.todo = new Todo(this.id,  '', '',  new Date());
+    this.todo = new Todo(this.id,  ' ', '',  new Date());
     this.addSingleTaskService.getSingleTodo(this.id);
+
 
   }
 

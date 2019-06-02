@@ -10,7 +10,7 @@ import java.util.Objects;
 public class Todos {
 
     @Id
-   // @GeneratedValue(strategy = GenerationType.IDENTITY)
+    // @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
     private int id;
 
@@ -24,9 +24,9 @@ public class Todos {
     private String taskDate;
 
 
-    public Todos(String taskDescritpion,  String taskDate, String taskWeight) {
+    public Todos(String taskDescritpion,  String taskDate, String taskWeight, int id) {
         this.taskDescritpion = taskDescritpion;
-
+        this.id = id;
         this.taskDate = taskDate;
         this.taskWeight = taskWeight;
     }

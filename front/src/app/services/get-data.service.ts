@@ -18,9 +18,9 @@ private todo: Todo;
 
 
   getSingleTodo(id) {
-    return this.http.get<Todo>(`http://www.localhost:8081${id}`);
+    return this.http.get<Todo>(`http://www.localhost:8081/todos/${id}`);
   }
-
+//  @GetMapping("/todos/{id}")
 
 
   deleteSingleTodo(id) {

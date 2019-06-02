@@ -33,9 +33,8 @@ public class TodosController {
 
     @GetMapping("/todos/{id}")
     public Todos findSingleTodo(@PathVariable int id) {
-        Todos todo = iTodosRepository.findById(id);
 
-        return todo;
+        return iTodosRepository.findById(id);
 
     }
 
@@ -54,12 +53,13 @@ public class TodosController {
     @PostMapping("/todos")
     public Todos saveNewTodo(@Valid @RequestBody Todos todo) {
 
-        Todos newTodo = new Todos();
+      /*  Todos newTodo = new Todos();
+        newTodo.setId(todo.getId());
         newTodo.setTaskWeight(todo.getTaskWeight());
         newTodo.setTaskDescritpion(todo.getTaskDescritpion());
-        newTodo.setTaskDate(todo.getTaskDate());
+        newTodo.setTaskDate(todo.getTaskDate());*/
 
-        return iTodosRepository.save(newTodo);
+        return iTodosRepository.save(todo);
 
     }
 

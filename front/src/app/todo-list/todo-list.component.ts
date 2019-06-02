@@ -2,6 +2,26 @@ import { Component, OnInit } from '@angular/core';
 import {GetDataService} from '../services/get-data.service';
 import {Router} from '@angular/router';
 
+
+
+
+
+
+
+export class Todo {
+  constructor(
+    public id: number,
+    public taskDescritpion: string,
+    public taskWeight: string,
+    public taskDate: Date
+  ) {
+
+  }
+}
+
+
+
+
 @Component({
   selector: 'app-todo-list',
   templateUrl: './todo-list.component.html',
@@ -54,13 +74,3 @@ addSingleTodo() {
 {id: 67, taskDescritpion: "PIMPEk", taskWeight: "Not-Important", taskDate: "2019-06-01T21:48:45.157Z"}*/
 
 
-export class Todo {
-  constructor(
-    public id: number,
-    public taskDescritpion: string,
-    public taskWeight: string,
-    public taskDate: Date
-  ) {
-
-  }
-}
