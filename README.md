@@ -2,7 +2,6 @@
 * [General info](#general-info)
 * [Screenshots](#screenshots)
 * [Technologies](#technologies)
-* [Setup](#setup)
 * [Features](#features)
 * [Status](#status)
 * [Inspiration](#inspiration)
@@ -12,16 +11,16 @@
 The main goal of this project was to make first full stack application using MySQL as a database, SpringBoot REST and Angular. It allows CRUD operations for a user. 
 
 ## Screenshots
-	![](todo.png)
-	![](todos.png)	
+![](todo.png)
+
+![](todos.png)	
 
 ## Technologies
 * MySQL - 8.0
 * SpringBoot - 2.1.5
 * Angular CLI - 7.3.9
 
-## Setup
-Describe how to install / setup your local environement / add link to demo version.
+
 
 ## Code Examples
 Code for updating existing Todo item. 
