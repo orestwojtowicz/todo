@@ -1,0 +1,77 @@
+
+
+
+
+
+<div class="container">
+
+  <div class="alert alert-warning moveAlert" *ngIf="validationForSingleTodo.dirty && descriptionValidation.invalid || !validationForSingleTodo.dirty">Enter atleast 5 characters in Description</div>
+  <div class="alert alert-warning" *ngIf="taskWeight.invalid">Please chose task weight</div>
+
+<form (ngSubmit)="addOrUpdateSingleTodo() && !validationForSingleTodo.invalid" #validationForSingleTodo="ngForm">
+
+  <p>
+    <mat-form-field appearance="legacy">
+      <mat-label>Description</mat-label>
+      <input matInput placeholder="Description"
+             [(ngModel)]="todo.taskDescritpion"
+             name="description"
+              #descriptionValidation="ngModel"
+               minlength="5"
+              required="required"
+              >
+      <mat-hint>Task description</mat-hint>
+    </mat-form-field>
+  </p>
+
+
+
+  <p>
+    <mat-form-field appearance="legacy">
+      <mat-select [(ngModel)]="todo.taskWeight"
+                  name="weights"
+                  placeholder="Weight"
+                  required="required"
+                  #taskWeight="ngModel">
+        <mat-option *ngFor="let taskWeight of weights"
+                    [value]="taskWeight.value"> {{taskWeight.viewValue}}</mat-option>
+      </mat-select>
+    </mat-form-field>
+  </p>
+
+
+  <button type="submit" mat-raised-button color="primary" id="changePosition"
+          [disabled]="!validationForSingleTodo.valid">Save</button>
+  </form>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
